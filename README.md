@@ -12,6 +12,8 @@ git clone https://github.com/colodenn/caterpillar-frontend
 git clone https://github.com/colodenn/caterpillar-backend
 ```
 
+Change keys in caterpillar-frontend/.env
+
 ```bash
 docker-compose up
 ```
