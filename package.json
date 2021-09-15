@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@nivo/calendar": "^0.73.0"
+  }
+}

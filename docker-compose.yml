@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  caterpillar-backend:
+    build: ./caterpillar-backend
+    container_name: caterpillar-backend
+    restart: always
+    volumes:
+      - ./caterpillar-backend:/app
+    expose:
+      - 5000
+
+  caterpillar-frontend:
+    build: ./caterpillar-frontend
+    container_name: caterpillar-frontend
+    restart: always
+    volumes:
+      - ./caterpillar-frontend:/app
+      - /app/node_modules
+      - /app/.next
+    expose:
+      - 3000
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - caterpillar-backend
+      - caterpillar-frontend
